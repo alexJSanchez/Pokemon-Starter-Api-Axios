@@ -1,10 +1,14 @@
 import React from "react";
 
-function nasaArticle(props){
+function NasaArticle(props){
     return(
-        <div className='articleContainer'>
-            <h1>{props.content.date} </h1>
+        <div>
+           <h1>{props.content.title}</h1>
+           <img src={props.content.hdurl}></img>
+           <h4>{props.content.explanation}</h4>
+           <p>{props.content.date}</p>
         </div>
     )
 }
-export default nasaArticle;
+
+export default NasaArticle;
