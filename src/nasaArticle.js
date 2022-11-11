@@ -48,9 +48,10 @@ function NasaArticle(props){
         setMainSix(result)
     }
 
- 
+    
     return(
        <>
+       
        {<img className="pokeBanner" src={pokeBanner}/>}
        <div>
        {<img className="pokeImg" onClick={getAll} src={pokeball}></img>}
