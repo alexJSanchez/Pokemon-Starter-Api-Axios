@@ -3,6 +3,7 @@ import React, {useEffect, useState,}from "react";
 import { Alert, Button } from 'reactstrap';
 import styled from 'styled-components'
 import "./nasaArticle.css"
+import pokeball from "./Images/pokeball2.png"
 
 const WrapperDiv = styled.div`
 color:#5955aa;
@@ -49,7 +50,7 @@ function NasaArticle(props){
  
     return(
        <>
-       {<button onClick={getAll}>getSix</button>}
+       {<img className="pokeImg" onClick={getAll} src={pokeball}></img>}
        <div className="container"> {mainSix.map(res =>  {
         return (
         <div key={res.data.id}>
