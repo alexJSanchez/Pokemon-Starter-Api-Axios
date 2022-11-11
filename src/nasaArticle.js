@@ -56,7 +56,7 @@ function NasaArticle(props){
             <h2>
                 {res.data.name}
             </h2>
-            <p>#{res.data.id}</p>
+            <h3>#{res.data.id}</h3>
             <img src={res.data.sprites.front_default}/>
             {res.data.types.map(res => <p key={res.slot}>{res.type.name}</p>)}
         </div>
