@@ -13,9 +13,10 @@ import "./App.css";
 function App() {
   let [data, setData] = useState();
   useEffect(() => {
-    axios.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+    axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151")
     .then(res => {
-      setData(res.data)
+      console.log()
+      setData(res.data.results)
     })
     .catch(err => console.error(err))
   },[])
