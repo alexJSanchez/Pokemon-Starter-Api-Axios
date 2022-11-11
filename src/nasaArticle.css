@@ -1,8 +1,13 @@
 .container {
     display: flex;
     justify-content: space-between;
+    
 }
 .pokeImg{
     height: 16rem;
     width: 16rem;
+}
+.pokeBanner{
+    height: 20rem;
+    width: 48rem;
 }

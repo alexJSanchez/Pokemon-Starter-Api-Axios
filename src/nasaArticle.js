@@ -4,6 +4,7 @@ import { Alert, Button } from 'reactstrap';
 import styled from 'styled-components'
 import "./nasaArticle.css"
 import pokeball from "./Images/pokeball2.png"
+import pokeBanner from "./Images/pokeBanner.png"
 
 const WrapperDiv = styled.div`
 color:#5955aa;
@@ -50,7 +51,11 @@ function NasaArticle(props){
  
     return(
        <>
+       {<img className="pokeBanner" src={pokeBanner}/>}
+       <div>
        {<img className="pokeImg" onClick={getAll} src={pokeball}></img>}
+       <p>Click the Pokeball to Generate Starting Six</p>
+       </div>
        <div className="container"> {mainSix.map(res =>  {
         return (
         <div key={res.data.id}>
