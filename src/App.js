@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NasaArticle from "./nasaArticle";
 import "./App.css";
@@ -11,20 +11,20 @@ import "./App.css";
 // }
 
 function App() {
-  let [data, setData] = useState();
-  useEffect(() => {
-    axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151")
-    .then(res => {
-      console.log()
-      setData(res.data.results)
-    })
-    .catch(err => console.error(err))
-  },[])
-  return (
-    <div className="App">
-      {data && <NasaArticle content={data}/>}
-    </div>
-  );
+	let [data, setData] = useState();
+	let [currentUrl, SetCurrentUrl] = useState(
+		"https://pokeapi.co/api/v2/pokemon"
+	);
+	useEffect(() => {
+		axios
+			.get(currentUrl)
+			.then((res) => {
+				console.log();
+				setData(res.data.results.map((p) => p.name));
+			})
+			.catch((err) => console.error(err));
+	}, []);
+	return <div className="App">{data && <NasaArticle content={data} />}</div>;
 }
 
 export default App;
